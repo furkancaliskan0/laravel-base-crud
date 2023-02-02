@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,7 +14,13 @@ return new class extends Migration
     {
         Schema::create('saints', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 32);
+            $table->string('luogo_di_nascita', 32);
+            $table->date('data_benedizione');
+            $table->integer('numero_miracoli')->unsigned();
+
             $table->timestamps();
+
         });
     }
 
