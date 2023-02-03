@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 // Importo il Models "Saint"
-use App\Models\Saints;
+use App\Models\Saint;
 
 class SaintSeeder extends Seeder
 {
@@ -16,6 +16,6 @@ class SaintSeeder extends Seeder
      */
     public function run()
     {
-        Saints::factory()->count(100)->create();
+        Saint::factory()->count(100)->create();
     }
 }
