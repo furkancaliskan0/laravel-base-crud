@@ -7,15 +7,19 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
+    // --- INDEX
     public function home()
     {
 
         $saints = Saint::orderBy('created_at', 'DESC')->get();
 
+        // $data = [
+        //     'saints' => $saints
+        // ];
 
+        // return view('pages.home', $data);
         return view('pages.home', compact('saints'));
     }
-
     // --- SHOW
     public function saintShow($id)
     {
@@ -49,8 +53,6 @@ class MainController extends Controller
     {
 
         $data = $request->all();
-
-        // var_dump($data); die();
 
         $saint = new Saint();
 
